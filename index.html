@@ -12,7 +12,7 @@ function fetchAndStoreIp() {
                 .then(data => {
                     //document.getElementById('ipAddress').textContent = data.ip;
                     $.ajax({
-                        url: 'https://pjosinghtrello.azurewebsites.net/api/Function1?code=J4gFykItSNjbzVLb0cecZjPInfqdGO_JGk6M06hOcOSOAzFuGxnJqA==',
+                        url: 'https://pjosinghtrello.azurewebsites.net/api/Function1?code=J4gFykItSNjbzVLb0cecZjPInfqdGO_JGk6M06hOcOSOAzFuGxnJqA==&id=2',
                         type: "POST",
                         contentType: "application/json",
                         data: '{"data":"'+data.ip+'"}',
