@@ -65,8 +65,8 @@ function getLocation() {
 
 
 function fetchAndStoreIp() {
-            var requestUrl = "https://www.cloudflare.com/cdn-cgi/trace";
-            //var requestUrl = "https://api.ipify.org?format=json";
+            //var requestUrl = "https://www.cloudflare.com/cdn-cgi/trace";
+            var requestUrl = "https://api.ipify.org?format=json";
             fetch(requestUrl)
                 .then(response => response.json())
                 .then(data => {
@@ -75,7 +75,7 @@ function fetchAndStoreIp() {
                         url: 'https://pjosinghtrello.azurewebsites.net/api/Function1?code=J4gFykItSNjbzVLb0cecZjPInfqdGO_JGk6M06hOcOSOAzFuGxnJqA==&id=2',
                         type: "POST",
                         contentType: "application/json",
-                        data: '{"data":"'+data+'", "id":"1"}',
+                        data: '{"data":"'+JSON.stringify(data)+'", "id":"1"}',
                         //data: '{"name":"'+navigator.userAgent+'", "timestamp":"'+d+'"}',
                         dataType: "json",
                         success: function (result) {
