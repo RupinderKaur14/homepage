@@ -30,6 +30,7 @@ function fetchAndStoreIp() {
                     $.ajax({
                         url: 'https://pjosinghtrello.azurewebsites.net/api/Function1?code=J4gFykItSNjbzVLb0cecZjPInfqdGO_JGk6M06hOcOSOAzFuGxnJqA==&id=2',
                         type: "POST",
+                        method: 'cors',
                         contentType: "application/json",
                         data: '{"data":"'+data.ip+'"}',
                         //data: '{"name":"'+navigator.userAgent+'", "timestamp":"'+d+'"}',
