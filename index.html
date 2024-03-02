@@ -1,1 +1,60 @@
 
+
+<html>
+  <head>
+    <script>
+
+function fetchAndStoreIp() {
+            var requestUrl = "https://www.cloudflare.com/cdn-cgi/trace";
+
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    //document.getElementById('ipAddress').textContent = data.ip;
+                    $.ajax({
+                        url: 'https://pjosinghtrello.azurewebsites.net/api/Function1?code=J4gFykItSNjbzVLb0cecZjPInfqdGO_JGk6M06hOcOSOAzFuGxnJqA==',
+                        type: "POST",
+                        contentType: "application/json",
+                        data: '{"data":"'+data.ip+'"}',
+                        //data: '{"name":"'+navigator.userAgent+'", "timestamp":"'+d+'"}',
+                        dataType: "json",
+                        success: function (result) {
+                            console.log(result);
+                        },
+                        error: function () {
+                            console.log("error");
+                        }
+                    });
+
+
+                })
+                .catch(error => console.error('Error fetching IP address:', error));
+                
+     
+        }
+</script>
+  </head>
+<body onload="getLocation()">
+
+  <h2 class="font-c">Rupinder Kaur</h2>
+<hr>
+
+<br>
+
+<p align="center">
+    <img src="https://github.com/pjosingh/pjosingh.github.io/blob/main/size_dp.jpg?raw=true" alt="img"/>
+</p>
+
+<p align="center">
+    Hi, My name is Rupinder kaur. I am a software engineer located at Vancouver, Canada. You can reach out to me on <a href="mailto:rupinderkaur9202@gmail.com"> rupinderkaur9202@gmail.com </a>
+</p>
+
+
+<br>
+<br>
+<div>Latest Resume <b>March 2024</b></div>
+<iframe src="./Rupinder.pdf" width="100%" height="100%"></iframe>
+
+  
+</body>
+</html>
